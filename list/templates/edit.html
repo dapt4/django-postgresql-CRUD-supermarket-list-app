@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% block title %}Edit item{% endblock %} 
+{% block content %}
+<h1>Edit item</h1>
+<div class="card card-body col-md-6 mx-auto">
+  <form method="POST" action="{% url 'edit' item.id %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="cantidad" class="form-label">Cantidad: </label>
+      <input type="text" class="form-control" name="cantidad" value="{{item.cantidad}}"/>
+    </div>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre item: </label>
+      <input type="text" class="form-control" name="nombre" value="{{item.nombre}}" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

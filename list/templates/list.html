@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}List items{% endblock %}
+{% block content %}
+<h1>Supermarket list</h1>
+<div class="card card-body col-md-6 mx-auto">
+  <ul class="list-group">
+    {% for item in items %}
+      <li class="list-group-item">
+        <span class="badge bg-secondary">{{item.cantidad}}</span>
+        {{item.nombre}}
+        <a class="btn btn-danger float-end" href="{% url 'delete' item.id %}">Delete</a>
+        <a class="btn btn-warning float-end" href="{% url 'edit' item.id %}">Edit</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
