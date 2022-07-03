@@ -5,11 +5,16 @@
 <div class="card card-body col-md-6 mx-auto">
   <ul class="list-group">
     {% for item in items %}
-      <li class="list-group-item">
+      <li class="list-group-item ">
         <span class="badge bg-secondary">{{item.cantidad}}</span>
         {{item.nombre}}
         <a class="btn btn-danger float-end" href="{% url 'delete' item.id %}">Delete</a>
         <a class="btn btn-warning float-end" href="{% url 'edit' item.id %}">Edit</a>
+        {% if item.hecho == False %}
+          <a class="btn btn-primary float-end" href="{% url 'deactivate' item.id %}">Get</a>
+        {% else %}
+          <p class="btn btn-dark float-end text-decoration-line-through">Got</p>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>

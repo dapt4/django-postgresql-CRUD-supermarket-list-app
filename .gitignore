@@ -1,2 +1,3 @@
 .env
 session.nvim
+__pycache__/

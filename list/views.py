@@ -30,3 +30,9 @@ def delete(request, id):
     item = Item.objects.get(id=id)
     item.delete()
     return redirect('/')
+
+def deactivate(request, id):
+    item = Item.objects.get(id=id)
+    item.hecho = True
+    item.save()
+    return redirect('/')
