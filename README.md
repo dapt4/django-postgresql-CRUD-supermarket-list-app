@@ -1,4 +1,8 @@
 # django-postgresql-CRUD-supermarket-list-app
+
+![image](https://user-images.githubusercontent.com/67972962/185005757-756cee1e-7f1a-4f69-a77a-ea46e0f0931a.png)
+
+
 first create your virtualenv
 
 `$ python3 -m venv venv`
@@ -38,3 +42,6 @@ finally the project run with:
 open your browser in: 
 
 `localhost:8000/`
+
+
+
